@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>P.A Group Co., Ltd</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial, sans-serif;
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+
+url('1jpeg.jpeg');
+
+background-size:cover;
+
+background-attachment:fixed;
+
+color:white;
+
+}
+
+/* HEADER */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+background:rgba(0,0,0,0.7);
+
+backdrop-filter:blur(10px);
+
+padding:15px 20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:1000;
+
+}
+
+header h2{
+
+font-size:30px;
+
+}
+
+/* MENU ICON */
+
+.menu{
+
+font-size:32px;
+
+cursor:pointer;
+
+}
+
+/* NAVIGATION */
+
+nav{
+
+display:none;
+
+position:fixed;
+
+top:80px;
+
+left:15px;
+
+background:rgba(0,0,0,0.9);
+
+padding:20px;
+
+border-radius:20px;
+
+z-index:1000;
+
+}
+
+nav a{
+
+display:block;
+
+color:white;
+
+text-decoration:none;
+
+margin:15px 0;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+color:orange;
+
+}
+
+/* LANGUAGE BUTTONS */
+
+.lang-buttons{
+
+position:fixed;
+
+top:15px;
+
+right:15px;
+
+z-index:1001;
+
+display:flex;
+
+gap:8px;
+
+}
+
+.lang-buttons button{
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.lang-buttons button:hover{
+
+transform:scale(1.1);
+
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+background:
+
+linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+
+url('hero.jpg');
+
+background-size:cover;
+
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.hero-content{
+
+background:rgba(0,0,0,0,35);
+
+padding:50px;
+border-radius:25px;
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 8px 32px rgba(0,0,0,0.5);
+
+
+}
+
+.hero h1{
+
+font-size:85px;
+
+font-weight:900;
+
+margin-bottom:20px;
+
+text-shadow:0 0 20px rgba(0,0,0,0.8);
+
+}
+
+.hero p{
+
+font-size:24px;
+
+margin-bottom:25px;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+background:orange;
+
+color:white;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+text-decoration:none;
+
+display:inline-block;
+
+}
+
+.btn:hover{
+
+background:red;
+
+transform:scale(1.05);
+
+}
+
+/* SECTIONS */
+
+section{
+
+padding:100px 20px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:40px;
+
+}
+
+/* CARD */
+
+.card{
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,0.15);
+
+max-width:1000px;
+
+margin:auto;
+
+margin-bottom:30px;
+
+box-shadow:0 8px 32px rgba(0,0,0,0.4);
+
+}
+
+.card p{
+
+font-size:20px;
+
+margin:12px 0;
+
+}
+
+/* SERVICES */
+
+.services-list li{
+
+font-size:22px;
+
+margin:12px 0;
+
+}
+
+/* GALLERY */
+
+.restaurant-gallery{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+justify-content:center;
+
+margin-top:25px;
+
+}
+
+.restaurant-gallery img{
+
+width:280px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:0.3s;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+
+}
+
+.restaurant-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* LINK BUTTON */
+
+.link-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+background:#007bff;
+
+color:white;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+.link-btn:hover{
+
+background:#0056b3;
+
+}
+
+/* CONTACT */
+
+.contact p{
+
+font-size:22px;
+
+margin:15px 0;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:rgba(0,0,0,0.9);
+
+text-align:center;
+
+padding:20px;
+
+font-size:18px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.section-title{
+
+font-size:32px;
+
+}
+
+.restaurant-gallery img{
+
+width:100%;
+
+height:auto;
+
+}
+
+header h2{
+
+font-size:22px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<!-- LANGUAGE BUTTONS -->
+
+<div class="lang-buttons">
+
+<button onclick="setLanguage('jp')">
+
+<img src="https://flagcdn.com/w40/jp.png" width="25">
+
+</button>
+
+<button onclick="setLanguage('en')">
+
+<img src="https://flagcdn.com/w40/us.png" width="25">
+
+</button>
+
+<button onclick="setLanguage('si')">
+
+<img src="https://flagcdn.com/w40/lk.png" width="25">
+
+</button>
+
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav id="menu">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#services">Our Services</a>
+
+<a href="#gallery">Office Photos</a>
+
+<a href="#gallery">Restaurant Photos</a>
+
+<a href="menu.pdf" target="_blank">
+
+Restaurant Menu
+
+</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<h1 id="welcomeText">
+
+Welcome to P.A Group
+
+</h1>
+
+<p id="subText">
+
+Office Services & Sri Lankan Restaurant in Japan
+
+</p>
+
+<a href="#contact" class="btn">
+
+Contact Us
+
+</a>
+
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+
+About Us
+
+</h2>
+
+<div class="card">
+
+<p><b>P.A Group Co., Ltd. is committed to delivering high-quality office services with professionalism, efficiency, and reliability.
+In addition, we proudly operate a Sri Lankan restaurant, offering authentic cuisine and warm hospitality that reflects our cultural values.
+Through our diverse services, we strive to build trust, create value, and maintain long-term relationships with our clients and customers.</b></p>
+
+<br>
+
+<iframe
+
+src= "https://maps.google.com/maps?q=Bando%20Ibaraki&t=&z=13&output=embed"
+
+width="100%"
+
+height="300"
+
+style="border:0; border-radius:20px;">
+
+</iframe>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">
+
+Our Services
+
+</h2>
+
+<div class="card">
+
+<ul class="services-list">
+
+<li>GTN Mobile SIM</li>
+
+<li>Credit Card Apply</li>
+
+<li>Docomo / SoftBank / AU / Rakuten Services</li>
+
+<li>Visa Consulting</li>
+
+<li>Web Designing</li>
+
+<li>SriLankan Restaurant</li>
+
+<li>Office Support Services</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- RESTAURANT -->
+
+<section id="restaurant">
+
+<h2 class="section-title">
+
+The Shacho Restaurant
+
+</h2>
+
+<div class="card">
+
+<p><b>Restaurant Mobile :</b> +81-90-9758-7773</p>
+
+<p><b>Restaurant Landline :</b> 0297-51-9426</p>
+
+<p><b>Address :</b> 〒 306-0631 </p>
+   <p>4294-12 Iwai, Bando, Ibaraki</p>
+
+<a class="link-btn" href="#gallery">
+
+📸 View Restaurant Photos
+
+</a>
+
+<br><br>
+
+<a class="link-btn"
+
+href="menu.pdf"
+
+target="_blank">
+
+📖 Open Restaurant Menu
+
+</a>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2 class="section-title">
+
+Restaurant Photo Gallery
+
+</h2>
+
+<div class="card">
+
+<div class="restaurant-gallery">
+
+<a href="11.jpeg" target="_blank">
+
+<img src="11.jpeg">
+
+</a>
+
+<a href="12.jpeg" target="_blank">
+
+<img src="12.jpeg">
+
+</a>
+
+<a href="21.jpeg" target="_blank">
+
+<img src="21.jpeg">
+
+</a>
+
+<a href="17.jpeg" target="_blank">
+
+<img src="17.jpeg">
+
+</a>
+
+<a href="23.jpeg" target="_blank">
+
+<img src="23.jpeg">
+
+</a>
+
+<a href="24.jpeg" target="_blank">
+
+<img src="24.jpeg">
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+
+Contact Us
+
+</h2>
+
+<div class="card contact">
+
+<h3>Office Contacts</h3>
+
+<p>Office Mobile : +81-90-4766-7773</p>
+
+<p>Office Landline : 0297-44-4764</p>
+
+<br>
+
+<h3>Restaurant Contacts</h3>
+
+<p>Restaurant Mobile : +81-90-9758-7773</p>
+
+<p>Restaurant Landline : 0297-51-9426</p>
+
+<br>
+
+<p>Email : infopagroup44401f@gmail.com</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+© 2026 P.A Group Co., Ltd
+
+</p>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("menu");
+
+if(menu.style.display === "block"){
+
+menu.style.display = "none";
+
+}else{
+
+menu.style.display = "block";
+
+}
+
+}
+
+function setLanguage(lang){
+
+if(lang === 'si'){
+
+document.getElementById("welcomeText").innerText =
+
+"P.A Group වෙත සාදරයෙන් පිළිගනිමු";
+
+document.getElementById("subText").innerText =
+
+"ජපානයේ Office Services සහ Restaurant";
+
+}
+
+if(lang === 'jp'){
+
+document.getElementById("welcomeText").innerText =
+
+"P.A Groupへようこそ";
+
+document.getElementById("subText").innerText =
+
+"日本のオフィスサービスとレストラン";
+
+}
+
+if(lang === 'en'){
+
+document.getElementById("welcomeText").innerText =
+
+"Welcome to P.A Group";
+
+document.getElementById("subText").innerText =
+
+"Office Services & Restaurant in Japan";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html
